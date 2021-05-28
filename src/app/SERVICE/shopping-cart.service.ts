@@ -5,30 +5,28 @@ import { Injectable } from '@angular/core';
 })
 export class ShoppingCartService {
 
-  // shopping_cart_items: any[]=[];
+  shopping_cart_items: any[string]=[];
 
   constructor() { }
   addProduct = (product: any [string])=>{
-    console.log('added',product)
-    localStorage.setItem('shopping cart', JSON.stringify(product))
-    // let items = this.get_shopping_cart_items();
-    // if(items){
-    //   items.push(product)
-    //   localStorage.setItem('shopping_cart', JSON.stringify(items))
+    let items = this.get_shopping_cart_items();
+    if(items){
+      items.push(product)
+      localStorage.setItem('shopping_cart', JSON.stringify(items))
 
-    // }else{
-    //   this.shopping_cart_items.push(product);
-    //    localStorage.setItem('shopping_cart', JSON.stringify(this.shopping_cart_items))
-    // }
+    }else{
+      this.shopping_cart_items.push(product);
+       localStorage.setItem('shopping_cart', JSON.stringify(this.shopping_cart_items))
+    }
 
 
     
   }
 
-  // get_shopping_cart_items=()=>{
-  //   let items = localStorage.getItem('shopping_cart')
-  //   return JSON.parse(items)
-  // }
+  get_shopping_cart_items=()=>{
+    let items:any[string] = localStorage.getItem('shopping_cart')
+    return JSON.parse(items)
+  }
   // getCartLength =()=>{
   //   let items = this.get_shopping_cart_items();
   //   return items? this.get_shopping_cart_items().length: 0
