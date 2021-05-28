@@ -14,6 +14,7 @@ import { HomeComponent } from './PAGES/home/home.component';
 import { CheckoutComponent } from './PAGES/checkout/checkout.component';
 import { BannerComponent } from './COMPONENTS/banner/banner.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductsComponent } from './COMPONENTS/products/products.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     CheckoutComponent,
     HeaderComponent,
-    BannerComponent
+    BannerComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,9 @@ export class HomeComponent implements OnInit {
       this.items = resp
     })
   }
+  addToCart(){
+    console.log('added to cart')
+  }
 
 
 }
